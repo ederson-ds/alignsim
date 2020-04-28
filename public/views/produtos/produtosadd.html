@@ -1,0 +1,73 @@
+<div class="row clearfix">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="header">
+        <h2>
+          Cadastrar Produto
+        </h2>
+      </div>
+      <div class="body">
+        {{produto}}
+        <form ng-submit="submitForm(produto)">
+          <div class="row clearfix">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Descrição"
+                    ng-model="produto.descricao"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Fornecedor"
+                    ng-model="produto.fornecedor"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="form-line">
+                  <input
+                    type="text"
+                    class="form-control money"
+                    placeholder="Preço de Custo"
+                    ng-model="produto.precocusto"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="form-line">
+                  <input
+                    type="text"
+                    class="form-control money"
+                    placeholder="Preço de Venda"
+                    ng-model="produto.precovenda"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary waves-effect">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
