@@ -16,6 +16,14 @@ myApp.config(function ($routeProvider, $locationProvider) {
       templateUrl: "views/produtos/produtosadd.html",
       controller: "produtosCtrl",
     })
+    .when("/produtos/create/:_id", {
+      templateUrl: "views/produtos/produtosadd.html",
+      controller: "produtosCtrl",
+    })
+    .when("/produtos/delete/:_deleteid", {
+      templateUrl: "views/produtos/produtosdelete.html",
+      controller: "produtosCtrl",
+    })
     .otherwise({
       template: "<h1>None</h1><p>Nothing has been selected</p>",
     });

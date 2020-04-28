@@ -1,17 +1,57 @@
 <div class="row clearfix">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <div class="card">
-            <div class="header">
-                <h2>
-                    Produtos
-                </h2>
-                <ul class="header-dropdown m-r--5">
-                    <a href="/produtos/create" class="btn btn-primary waves-effect">Cadastrar</a>
-                </ul>
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="header">
+        <h2>
+          Produtos
+        </h2>
+        <ul class="header-dropdown" style="width: 75%;">
+          <div class="row">
+            <div class="col-sm-10" style="padding: 0;">
+              <input
+                type="text"
+                class="form-control"
+                ng-model="searchString"
+                placeholder="Pesquisar"
+              />
             </div>
-            <div class="body">
-                table
+            <div class="col-sm-2">
+              <a href="/produtos/create" class="btn btn-primary waves-effect"
+                >Cadastrar</a
+              >
             </div>
-        </div>
+          </div>
+        </ul>
+      </div>
+      <div class="body">
+        <table id="mainTable" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Fornecedor</th>
+              <th>Preço Custo</th>
+              <th>Preço Venda</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="produto in produtos | filter: searchString">
+              <td>{{produto.descricao}}</td>
+              <td>{{produto.fornecedor}}</td>
+              <td>{{produto.precocusto}}</td>
+              <td>{{produto.precovenda}}</td>
+              <td>
+                <a href="/produtos/create/{{produto._id}}" style="text-decoration: none;color: black;">
+                  <i class="material-icons">edit</i>
+                </a>
+                <a href="/produtos/delete/{{produto._id}}" style="text-decoration: none;color: black;">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </div>
