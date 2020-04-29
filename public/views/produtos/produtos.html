@@ -6,14 +6,18 @@
           Produtos
         </h2>
         <ul class="header-dropdown" style="width: 75%;">
-          <div class="row">
+          <div class="row clearfix">
             <div class="col-sm-10" style="padding: 0;">
-              <input
-                type="text"
-                class="form-control"
-                ng-model="searchString"
-                placeholder="Pesquisar"
-              />
+              <div class="form-group">
+                <div class="form-line">
+                  <input
+                    type="text"
+                    class="form-control"
+                    ng-model="searchString"
+                    placeholder="Pesquisar"
+                  />
+                </div>
+              </div>
             </div>
             <div class="col-sm-2">
               <a href="/produtos/create" class="btn btn-primary waves-effect"
@@ -41,10 +45,16 @@
               <td>{{produto.precocusto}}</td>
               <td>{{produto.precovenda}}</td>
               <td>
-                <a href="/produtos/create/{{produto._id}}" style="text-decoration: none;color: black;">
+                <a
+                  href="/produtos/create/{{produto._id}}"
+                  style="text-decoration: none; color: black;"
+                >
                   <i class="material-icons">edit</i>
                 </a>
-                <a href="/produtos/delete/{{produto._id}}" style="text-decoration: none;color: black;">
+                <a
+                  href="/produtos/delete/{{produto._id}}"
+                  style="text-decoration: none; color: black;"
+                >
                   <i class="material-icons">delete</i>
                 </a>
               </td>
