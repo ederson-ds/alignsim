@@ -64,7 +64,7 @@ $.AdminBSB.leftSideBar = {
         });
 
         $.each($('.menu-toggle.toggled'), function (i, val) {
-            $(val).next().slideToggle(0);
+            //$(val).next().slideToggle(0);
         });
 
         //When page load
@@ -76,7 +76,7 @@ $.AdminBSB.leftSideBar = {
         });
 
         //Collapse or Expand Menu
-        $('.menu-toggle').on('click', function (e) {
+        /*$('.menu-toggle').on('click', function (e) {
             var $this = $(this);
             var $content = $this.next();
 
@@ -93,7 +93,7 @@ $.AdminBSB.leftSideBar = {
 
             $this.toggleClass('toggled');
             $content.slideToggle(320);
-        });
+        });*/
 
         //Set menu height
         _this.setMenuHeight(true);
@@ -239,14 +239,15 @@ $.AdminBSB.search = {
 */
 $.AdminBSB.navbar = {
     activate: function () {
-        var $body = $('body');
-        var $overlay = $('.overlay');
+        /*var $body = $('body');
+        var $overlay = $('.overlay');*/
 
         //Open left sidebar panel
-        $('.bars').on('click', function () {
+        /*$('.bars').on('click', function () {
+            console.log("teste");
             $body.toggleClass('overlay-open');
             if ($body.hasClass('overlay-open')) { $overlay.fadeIn(); } else { $overlay.fadeOut(); }
-        });
+        });*/
 
         //Close collapse bar on click event
         $('.nav [data-close="true"]').on('click', function () {

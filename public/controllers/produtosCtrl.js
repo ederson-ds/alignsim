@@ -31,7 +31,7 @@ myApp.controller("produtosCtrl", function (
     $scope.create(id);
   } else if (deleteid) {
     $scope.delete(deleteid);
-  } else {
+  } else if(!($location.path() == "/produtos/create")) {
     $scope.index();
   }
 

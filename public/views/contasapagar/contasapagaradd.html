@@ -1,0 +1,61 @@
+<div class="row clearfix">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="header">
+        <h2>
+          Adicionar Pagamento
+        </h2>
+      </div>
+      <div class="body">
+        <form ng-submit="submitForm(contasapagar)">
+          <div class="row clearfix">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control" placeholder="Descrição do pagamento"
+                    ng-model="contasapagar.descricao" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <div class="form-line" id="bs_datepicker_container">
+                  <input type="text" class="form-control date" placeholder="Vencimento" ng-model="contasapagar.vencimento"
+                    required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row clearfix">
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control money" placeholder="Valor Bruto"
+                    ng-model="contasapagar.valorbruto" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control money" placeholder="Juros"
+                    ng-model="contasapagar.juros" required />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="form-group">
+                <div class="form-line">
+                  <input type="text" class="form-control money" placeholder="Desconto"
+                    ng-model="contasapagar.desconto" required />
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/contasapagar" class="btn btn-default waves-effect">Voltar</a>
+          <button type="submit" class="btn btn-primary waves-effect">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

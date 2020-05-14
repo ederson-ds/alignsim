@@ -1,0 +1,69 @@
+<div class="row clearfix">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+      <div class="header">
+        <h2>
+          Contas a pagar
+        </h2>
+        <ul class="header-dropdown" style="width: 75%;">
+          <div class="row clearfix">
+            <div class="col-sm-10" style="padding: 0;">
+              <div class="form-group">
+                <div class="form-line">
+                  <input
+                    type="text"
+                    class="form-control"
+                    ng-model="searchString"
+                    placeholder="Pesquisar"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <a href="/contasapagar/create" class="btn btn-primary waves-effect"
+                >Cadastrar</a
+              >
+            </div>
+          </div>
+        </ul>
+      </div>
+      <div class="body">
+        <table id="mainTable" class="table table-striped">
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Vencimento</th>
+              <th>Valor Bruto</th>
+              <th>Juros</th>
+              <th>Desconto</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="contasapagar in contasapagar | filter: searchString track by $index">
+              <td>{{contasapagar.descricao}}</td>
+              <td>{{contasapagar.vencimento}}</td>
+              <td>{{contasapagar.valorbruto}}</td>
+              <td>{{contasapagar.juros}}</td>
+              <td>{{contasapagar.desconto}}</td>
+              <td>
+                <a
+                  href="/contasapagar/create/{{contasapagar._id}}"
+                  style="text-decoration: none; color: black;"
+                >
+                  <i class="material-icons">edit</i>
+                </a>
+                <a
+                  href="/contasapagar/delete/{{contasapagar._id}}"
+                  style="text-decoration: none; color: black;"
+                >
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
